@@ -3,6 +3,9 @@
 old_openttd_dir="/home/openttd/.openttd"
 new_openttd_dir="/home/openttd/.local/share/openttd"
 
+cp -r /ottd-settings/config/openttd/* /home/openttd/.config/openttd/
+cp -r /ottd-settings/local/share/openttd/* /home/openttd/.local/share/openttd/
+
 #check if new openttd profile dir exists
 if [ -d ${new_openttd_dir} ]; then
   # if exists, set the new path
@@ -13,8 +16,8 @@ else
 fi
 
 savegame="${savepath}/${savename}"
-LOADGAME_CHECK="${loadgame}x"
 loadgame=${loadgame:-'false'}
+LOADGAME_CHECK="${loadgame}x"
 
 PUID=${PUID:-911}
 PGID=${PGID:-911}
